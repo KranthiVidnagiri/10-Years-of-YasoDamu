@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 10th Wedding Anniversary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scene-shell">
+    <canvas class="particle-layer" id="particleLayer" aria-hidden="true"></canvas>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="vignette"></div>
+
+    <main class="story-stage" id="storyStage">
+      <section class="hero-panel panel active" data-panel="intro">
+        <div class="hero-copy">
+          <p class="overline">A cinematic journey through love</p>
+          <h1>Happy 10th Wedding Anniversary Baba &#128150; &amp; Amma	&#128150; <span></span></h1>
+          <p class="intro-text">Ten years, five beautiful memories, one timeless story glowing through a warm golden evening.</p>
+          <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false">Play Music</button>
+        </div>
+        <div class="hero-glow"></div>
+      </section>
+
+      <section class="slideshow-panel panel" data-panel="slideshow" aria-label="Anniversary memories">
+        <div class="slideshow-track" id="slideshowTrack">
+          <article class="memory-card active" data-index="0">
+            <div class="light-sweep"></div>
+            <div class="frame-glow"></div>
+            <img src="assets\photos/1.jpeg" alt="Wedding photo memory card">
+            <div class="memory-copy">
+              <p class="memory-tag">Wedding Photo</p>
+              <h2>The Day It All Began</h2>
+            </div>
+          </article>
+
+          <article class="memory-card" data-index="1">
+            <div class="light-sweep"></div>
+            <div class="frame-glow"></div>
+            <img src="assets/photos/2.jpeg" alt="Early years memory card">
+            <div class="memory-copy">
+              <p class="memory-tag">Early Years</p>
+              <h2>Growing Together</h2>
+            </div>
+          </article>
+
+          <article class="memory-card" data-index="2">
+            <div class="light-sweep"></div>
+            <div class="frame-glow"></div>
+            <img src="assets/photos/3.jpeg" alt="Family moment memory card">
+            <div class="memory-copy">
+              <p class="memory-tag">Family Moment</p>
+              <h2>Home Filled With Joy</h2>
+            </div>
+          </article>
+
+          <article class="memory-card" data-index="3">
+            <div class="light-sweep"></div>
+            <div class="frame-glow"></div>
+            <img src="assets/photos/4.jpeg" alt="Happy candid memory card">
+            <div class="memory-copy">
+              <p class="memory-tag">Happy Candid</p>
+              <h2>Laughter In Motion</h2>
+            </div>
+          </article>
+
+          <article class="memory-card" data-index="4">
+            <div class="light-sweep"></div>
+            <div class="frame-glow"></div>
+            <img src="assets/photos/5.jpeg" alt="Latest photo memory card">
+            <div class="memory-copy">
+              <p class="memory-tag">Latest Photo</p>
+              <h2>Still Shining, Still Us</h2>
+            </div>
+          </article>
+        </div>
+
+        <div class="progress-dots" id="progressDots" aria-label="Slideshow progress">
+          <button class="dot active" type="button" data-go="0" aria-label="Show wedding photo"></button>
+          <button class="dot" type="button" data-go="1" aria-label="Show early years photo"></button>
+          <button class="dot" type="button" data-go="2" aria-label="Show family moment photo"></button>
+          <button class="dot" type="button" data-go="3" aria-label="Show happy candid photo"></button>
+          <button class="dot" type="button" data-go="4" aria-label="Show latest photo"></button>
+        </div>
+      </section>
+
+      <section class="final-panel panel" data-panel="finale">
+        <div class="final-burst"></div>
+        <p class="final-kicker">10 Years Together</p>
+        <h2>10 years of love, laughter, and togetherness&hellip;</h2>
+        <p>Wishing you many more beautiful years ahead &#128149;</p>
+      </section>
+    </main>
+  </div>
+  <audio id="bgMusic" loop>
+  <source src="assets/music/song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

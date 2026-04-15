@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Happy Candid Placeholder</title>
+  <desc id="desc">Placeholder artwork for the happy candid photo in the anniversary slideshow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#6a3218"/>
+      <stop offset="45%" stop-color="#e0984b"/>
+      <stop offset="100%" stop-color="#34170d"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1600" fill="url(#bg)"/>
+  <g fill="#fff1d4" fill-opacity=".12">
+    <circle cx="220" cy="340" r="28"/>
+    <circle cx="330" cy="250" r="14"/>
+    <circle cx="690" cy="300" r="18"/>
+    <circle cx="780" cy="400" r="28"/>
+  </g>
+  <g transform="translate(450 790)" stroke="#fff1d2" stroke-opacity=".45" stroke-width="10" fill="none" stroke-linecap="round">
+    <path d="M-155 55c62-68 124-100 186-100 73 0 125 36 160 83"/>
+    <path d="M-128 -70c24-58 70-96 128-96 58 0 103 37 128 96"/>
+  </g>
+  <g fill="#fff1d2" fill-opacity=".88" font-family="Georgia, serif" text-anchor="middle">
+    <text x="450" y="225" font-size="67" letter-spacing="11">HAPPY CANDID</text>
+    <text x="450" y="1260" font-size="40" letter-spacing="8">Drop in a smile-filled candid moment</text>
+  </g>
+</svg>

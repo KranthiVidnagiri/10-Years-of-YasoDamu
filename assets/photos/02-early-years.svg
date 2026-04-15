@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Early Years Placeholder</title>
+  <desc id="desc">Placeholder artwork for the early years photo in the anniversary slideshow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#3d1f12"/>
+      <stop offset="50%" stop-color="#9d5623"/>
+      <stop offset="100%" stop-color="#26110a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1600" fill="url(#bg)"/>
+  <circle cx="460" cy="370" r="210" fill="#ffe09e" fill-opacity=".16"/>
+  <g fill="none" stroke="#ffd99b" stroke-opacity=".45" stroke-width="9">
+    <path d="M180 1070c92-134 189-202 294-202s202 68 294 202"/>
+    <path d="M220 1120c80-94 157-141 254-141s174 47 254 141"/>
+  </g>
+  <g fill="#fff1d2" fill-opacity=".9" font-family="Georgia, serif" text-anchor="middle">
+    <text x="450" y="230" font-size="68" letter-spacing="11">EARLY YEARS</text>
+    <text x="450" y="1265" font-size="40" letter-spacing="8">Add a photo from your early memories</text>
+  </g>
+  <g fill="#fff4df" fill-opacity=".22">
+    <circle cx="340" cy="720" r="96"/>
+    <circle cx="560" cy="720" r="96"/>
+    <rect x="280" y="800" width="340" height="210" rx="170"/>
+  </g>
+</svg>
