@@ -185,29 +185,24 @@ function setupMusic() {
     return;
   }
 
-  audio.load();
-
-  // 🔥 unlock audio (remove delay)
-  document.body.addEventListener("click", () => {
-    audio.play().then(() => {
-      audio.pause();
-      audio.currentTime = 0;
-    }).catch(() => {});
-  }, { once: true });
+  audio.preload = "auto";
 
   musicToggle.addEventListener("click", () => {
     const isPlaying = musicToggle.getAttribute("aria-pressed") === "true";
 
     if (!isPlaying) {
+      // 🔥 play immediately
       audio.currentTime = 0;
       audio.play();
 
+      // start slideshow immediately
       if (!autoStarted) {
         autoStarted = true;
         startSlideshow();
       }
 
     } else {
+      // 🔥 stop everything
       resetToIntro();
     }
 
@@ -215,7 +210,7 @@ function setupMusic() {
     musicToggle.textContent = isPlaying ? "Play Music" : "Pause Music";
   });
 
-  // 🔥 if music ends early
+  // if music ends automatically
   audio.addEventListener("ended", () => {
     resetToIntro();
   });
