@@ -45,7 +45,6 @@ function activateCard(index) {
       image.style.animation = "none";
       void image.offsetWidth;
       image.style.animation = "";
-
     } else if (cardIndex === index - 1) {
       card.classList.add("prev");
     }
@@ -65,16 +64,13 @@ function resetToIntro() {
   activeIndex = 0;
   autoStarted = false;
 
-  // stop music
   if (audio) {
     audio.pause();
     audio.currentTime = 0;
   }
 
-  // go to intro
   showPanel("intro");
 
-  // reset cards
   cards.forEach(card => card.classList.remove("active", "prev"));
   if (cards[0]) cards[0].classList.add("active");
 
@@ -98,10 +94,9 @@ function startSlideshow() {
     if (activeIndex >= cards.length) {
       clearInterval(slideshowTimer);
 
-      // 👉 show final panel
       showPanel("finale");
 
-      // 🔥 wait 3 sec then reset
+      // wait 3 seconds then reset
       clearTimeout(finalTimer);
       finalTimer = setTimeout(() => {
         resetToIntro();
@@ -175,7 +170,7 @@ function setupParallax() {
   });
 }
 
-/* ---------------- MUSIC ---------------- */
+/* ---------------- MUSIC (SYNC FIXED) ---------------- */
 
 function setupMusic() {
   const audio = document.getElementById("bgMusic");
@@ -185,13 +180,15 @@ function setupMusic() {
     return;
   }
 
-  audio.load();
+  audio.preload = "auto";
 
-  // 🔥 unlock audio (remove delay)
+  // 🔥 unlock audio instantly (removes delay)
   document.body.addEventListener("click", () => {
+    audio.muted = true;
     audio.play().then(() => {
       audio.pause();
       audio.currentTime = 0;
+      audio.muted = false;
     }).catch(() => {});
   }, { once: true });
 
@@ -200,12 +197,18 @@ function setupMusic() {
 
     if (!isPlaying) {
       audio.currentTime = 0;
-      audio.play();
 
-      if (!autoStarted) {
-        autoStarted = true;
-        startSlideshow();
-      }
+      // 🔥 wait for real playback → perfect sync
+      audio.play().then(() => {
+
+        if (!autoStarted) {
+          autoStarted = true;
+          startSlideshow();
+        }
+
+      }).catch(err => {
+        console.error("Play failed:", err);
+      });
 
     } else {
       resetToIntro();
@@ -215,7 +218,6 @@ function setupMusic() {
     musicToggle.textContent = isPlaying ? "Play Music" : "Pause Music";
   });
 
-  // 🔥 if music ends early
   audio.addEventListener("ended", () => {
     resetToIntro();
   });
